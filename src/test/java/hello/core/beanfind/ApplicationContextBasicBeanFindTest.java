@@ -30,7 +30,7 @@ public class ApplicationContextBasicBeanFindTest {
     }
 
     @Test
-    @DisplayName("구체 타입으로 조회") // 구체 클래스가 들어난다면 유연성이 떨어지는 것이다!
+    @DisplayName("구체 타입으로 조회") // 이렇게 하는 것 지양할 것. 구체 클래스가 들어난다면 유연성이 떨어지는 것이다! "인터페이스에 대고 프로그래밍하라"
     void findBeanByName2() {
         MemberService memberService = ac.getBean("memberService", MemberServiceImpl.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
